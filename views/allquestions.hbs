@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style-nav.css">
+    <link rel="stylesheet" href="../style-dashboard.css">
+    <link rel="stylesheet" href="../style-modaladdq.css">
+    <link rel="stylesheet" href="../style-allquestions.css">
+  </head>
+  <body>
+{{> navigation}}
+    {{! gets a user object which has all data pertaining to user }}
+    <div class="main_dashboard">
+      <div class="first_col">
+        <div class="content_firstcol">
+        <ul class="interests">
+          <li><a href="/createSpace" class="createspace">➕ Create Space</a></li>
+          {{#each user.interest as |interest|}}
+            <li><a href="/open_{{interest}}">{{interest}}</a></li>
+          {{/each}}
+        </ul>
+        {{!-- show user details --}}
+        <ul class="footer">
+          <li><a href="https://www.quora.com/about">About</a></li>
+            <li><a href="https://www.careers.quora.com/">Careers</a></li>
+            <li><a href="https://www.quora.com/about/privacy">Privacy</a></li>
+            <li><a href="https://www.quora.com/about/tos">Terms</a></li>
+            <li><a href="/">Contact</a></li>
+            <li><a href="/">Languages</a></li>
+            <li><a href="/">Your Ad Choices</a></li>
+            <li><a href="/">Press</a></li>
+            <li><a href="/">©️ Quora, Inc. 2023</a></li>
+        </ul>
+        </div>
+      </div>
+      <div class="questions second_col">
+        <div class="heading">Questions for You!</div>
+        {{#if questions}}
+        {{!-- displaying all questions on database --}}
+        {{#each questions as |question|}}
+        <div class="question">
+          {{!-- send an aggregated table of user and their questions --}}
+          <div class="qcontent q"><span><a href="/getAnswer?q_id={{question._id}}">{{question.question}}</a></span></div>
+          <div class="qcontent date"><span>{{question.date}}</span></div>
+          <div class="qcontent user"><span>{{question.question_user.email}}</span></div>
+          <div class="hide">{{question._id}}</div>
+          <button class="answer">Answer</button>
+          
+        </div>
+        {{/each}}
+    
+        {{else}}
+        <div class="question noleft">No questions!</div>
+        {{/if}}
+        <ul>
+        
+          <li>
+
+          </li>
+        </ul>
+      </div>
+      <div class="ads third_col"></div>
+      <div class="addq_modal">
+      <div class="cross">
+        <img
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios/50/multiply.png"
+          alt="multiply"
+        />
+      </div>
+      <div class="parts">
+        <div class="addqbtn">Add Question</div>
+        <div class="createpostbtn">Create Post</div>
+      </div>
+      <div class="addquestion">
+        <div class="tips">
+          <div>Tips on getting good answers quickly</div>
+          <ul>
+            <li>Make sure your question has not been asked already
+            </li>
+            <li>Keep your question short and to the point
+            </li>
+            <li>Double-check grammar and spelling
+            </li>
+          </ul>
+        </div>
+        <form action="/postquestion" method="post" class="postform">
+          <input
+            type="text"
+            id="question"
+            name="question"
+            placeholder="Start your question with 'What','How','Why',etc."
+          />
+          <div class="wrapperPostq">
+            <button type="button" class="cancel">Cancel</button>
+            <button type="submit" class="add_qbtn">Add question</button>
+          </div>
+        </form>
+      </div>
+      <div class="addpost">
+        <form action="/addPost" method="post" class="addpostform">
+          <textarea
+            name="post"
+            class="post_content"
+            placeholder="Say something..."
+            cols="30"
+            rows="10"
+          ></textarea>
+          
+          <button type="submit" class="addpost_btn">Post</button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay">
+
+    </div>
+    {{!-- answer modal --}}
+    <div class="answer_modal">
+      {{!-- cross btn --}}
+      <div class="crossAns">
+        <img
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios/50/multiply.png"
+          alt="multiply"
+        />
+      </div>
+      {{!-- name of user --}}
+      <div class="user_name">{{user.email}}</div>
+      {{!-- question to be answered --}}
+      <div class="question_toanswer"></div>
+      {{!-- text area --}}
+      <form action="/answer_q" method="post">
+      <textarea name="answertoq" id="answr_toq" placeholder="Say something.." class="post_answer" cols="30" rows="10"></textarea>
+      <input type="hidden" name="questionToAns"  class="questionToAns">
+      
+      <button type="submit" class="ans_qbtn">Post</button>
+      
+      </form>
+    </div>
+    <div class="overlay-one"></div>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="script-allquestions.js"></script>
+    <script src="../script-navbar.js"></script>
+    <script src="../search-nav.js"></script>
+  </body>
+</html>

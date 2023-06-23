@@ -1,0 +1,142 @@
+* {
+  font-family: sans-serif;
+}
+main {
+  width: 50%;
+}
+.flex_cols {
+  display: flex;
+  min-height: 90vh;
+}
+.first_col,
+.third_col {
+  width: 25%;
+  background-color: #7f808126;
+}
+.main_content {
+  display: flex;
+  justify-content: space-between;
+  /* width: 85%; */
+  margin: 6% auto;
+}
+.mypostsquestions .myQuestion,
+.mypostsquestions .myPost,
+.mypostsquestions .myAnswer {
+  width: 80%;
+  margin-top: 2%;
+  padding: 2%;
+  background-color: #8080803d;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+.image img {
+  width: 80px;
+  height: 90px;
+}
+.image {
+  margin-right: 1%;
+}
+.stats {
+  margin-top: 10%;
+  padding-bottom: 2%;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.311);
+}
+.stats a {
+  font-size: 15px;
+  color: gray;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+}
+.stats a:hover {
+  background-color: rgba(128, 128, 128, 0.148);
+}
+.mainProfile {
+  margin-left: 2%;
+}
+.pic_n_info {
+  display: flex;
+  margin-right: 4%;
+}
+.name {
+  margin-top: 1%;
+  font-size: 25px;
+  font-weight: 600;
+}
+.profile_cred,
+.follow {
+  font-size: 15px;
+  margin-top: 3%;
+  color: rgba(128, 128, 128, 0.61);
+}
+.icon {
+  cursor: pointer;
+}
+/* .mainProfile {
+  margin-right: 2%;
+} */
+.credentials {
+  margin-right: 2%;
+  font-size: 15px;
+  color: gray;
+}
+.headingCredentials {
+  font-weight: 600;
+  font-size: 17px;
+}
+.credentials div:first-child div {
+  margin-bottom: 2%;
+}
+.mypostsquestions div div {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 2% 0;
+}
+.i {
+  margin-top: 1%;
+  /* margin-right: 2%; */
+}
+.btns-logouts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6%;
+}
+
+.btns-logouts button {
+  text-decoration: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 16px;
+  background-color: rgba(128, 128, 128, 0.351);
+  color: black;
+  /* width: 28%; */
+  padding: 6px 10px;
+  outline: none;
+  border: 1px solid black;
+  font-weight: 400;
+  display: inline-block;
+}
+.mypostsquestions div a {
+  text-decoration: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 16px;
+  background-color: rgba(128, 128, 128, 0.351);
+  color: black;
+  /* width: 28%; */
+  padding: 6px 10px;
+  outline: none;
+  border: 1px solid black;
+  font-weight: 400;
+  display: inline-block;
+}
+.btns-logouts button:hover,
+.mypostsquestions div a:hover {
+  background-color: rgba(128, 128, 128, 0.658);
+}

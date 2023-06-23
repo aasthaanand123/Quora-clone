@@ -1,0 +1,141 @@
+/* modal default */
+.addq_modal,
+.overlay {
+  visibility: hidden;
+}
+.addq_modal {
+  width: 35%;
+  height: 53%;
+  position: absolute;
+  top: 13%;
+  left: 30%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: black;
+  padding: 3%;
+  padding-top: 2%;
+  z-index: 3;
+}
+.overlay {
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+.addpost {
+  visibility: hidden;
+}
+.cross {
+  cursor: pointer;
+}
+.parts {
+  margin: 5%;
+  display: flex;
+}
+.parts div {
+  padding: 2%;
+  width: 50%;
+  cursor: pointer;
+}
+.addquestion {
+  height: 50%;
+}
+.addqbtn,
+.createpostbtn {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.393);
+}
+.parts .addqbtn {
+  border-color: blue;
+}
+/* tips to add a question */
+.tips {
+  background-color: #ebf0ff;
+  padding: 2%;
+}
+.tips div {
+  font-weight: 600;
+}
+.tips div,
+.tips ul {
+  color: #2e69ff;
+}
+/* continue styling space for add question */
+.wrapperPostq {
+  margin-top: 13%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 4%;
+  padding-right: 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.299);
+}
+.wrapperPostq button {
+  cursor: pointer;
+}
+.postform {
+  margin-top: 2%;
+}
+.postform input {
+  padding: 2%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+}
+.cancel {
+  font-size: 16px;
+  margin-right: 5%;
+  outline: none;
+  border: none;
+  color: gray;
+  font-weight: 600;
+  background-color: white;
+}
+.add_qbtn,
+.addpost_btn {
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  width: 28%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+}
+/* style createpost modal area */
+.addpost {
+  height: 60%;
+}
+.addpostform {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.addpostform textarea {
+  resize: none;
+  width: 100%;
+  height: 75%;
+  outline: none;
+  border: none;
+  margin-bottom: 2%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+}
+.addpostform div input {
+  width: 100%;
+}
+.upload_image {
+  width: 100%;
+  margin-bottom: 2%;
+}
+.upload_image div {
+  margin-bottom: 1%;
+}
+.addpost_btn {
+  cursor: pointer;
+}

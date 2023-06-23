@@ -1,0 +1,95 @@
+dependencies to be installed
+express
+hbs
+mongodb
+body parser
+<body class="indexBody">
+    <div class="main_content">
+      <header>
+        <h1>QUORA</h1>
+        <h2>A place to share knowledge and better understand the world</h2>
+      </header>
+      <main class="goToUser">
+        <div class="signUp">
+          <div>
+            By continuing you indicate that you agree to Quora’s Terms of
+            Service and Privacy Policy.
+          </div>
+          <a href="/">Continue with Google</a>
+          <a href="/">Continue with Facebook</a>
+          <a href="/">Sign up with email</a>
+        </div>
+        <div class="login">
+          <div>Login</div>
+          <form action="/" method="post">
+            <label for=""></label>
+            <input type="text" placeholder="Your email" />
+            <label for=""></label>
+            <input type="text" placeholder="Your password" />
+            <a href="">Forgot Password</a>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </main>
+      <div>english ></div>
+      <footer>
+        <ul>
+          <li>About</li>
+          <li>Careers</li>
+          <li>Privacy</li>
+          <li>Terms</li>
+          <li>Contact</li>
+          <li>Languages</li>
+          <li>Your Ad Choices</li>
+          <li>Press</li>
+          <li>Quora, Inc. 2023</li>
+        </ul>
+      </footer>
+    </div>
+    .indexBody {
+  /* body's width and height of viewports width and height */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: blue;
+}
+
+.main_content {
+  width: 45%;
+  height: 50%;
+  margin: 10% auto;
+  background-color: pink;
+  padding: 3%;
+}
+.goToUser {
+  display: flex;
+}
+footer ul {
+  display: flex;
+}
+
+
+ideas
+1. if any state of user is already active then directly show the user without having the need for logging in
+let inp_email = signupEmail.value;
+  let inp_pass = signupPassword.value;
+  //when sign up button is pressed request to the db to check if
+  //user exists and then show modal of interests and remove modal
+  //of interests
+  try {
+    //post request on create user
+    axios
+      .post("/createUser", {
+        email: inp_email,
+        password: inp_pass,
+      })
+      .then((data) => {
+        //hide sign up box if it is showing and show interest box
+        
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // axios.post("/createUser").then((data)=>{hide signup show interest
+    //and then make a request to save interest with data._id})
+    //if user exists then render the homepage otherwise login normally

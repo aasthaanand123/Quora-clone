@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {{!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> --}}
+
+    <link rel="stylesheet" href="../style-nav.css">
+    <link rel="stylesheet" href="../style-dashboard.css">
+    <link rel="stylesheet" href="../style-modaladdq.css">
+  </head>
+  <body>
+    {{> navigation}}
+    {{! gets a user object which has all data pertaining to user }}
+    <div class="main_dashboard">
+      <div class="first_col">
+        <div class="content_firstcol">
+        <ul class="interests">
+          <li><a href="/createSpace" class="createspace">➕ Create Space</a></li>
+          {{#each user.interest as |interest|}}
+            <li><a href="/open_{{interest}}">{{interest}}</a></li>
+          {{/each}}
+        </ul>
+        {{!-- show user details --}}
+        <ul class="footer">
+          <li><a href="https://www.quora.com/about">About</a></li>
+            <li><a href="https://www.careers.quora.com/">Careers</a></li>
+            <li><a href="https://www.quora.com/about/privacy">Privacy</a></li>
+            <li><a href="https://www.quora.com/about/tos">Terms</a></li>
+            <li><a href="/">Contact</a></li>
+            <li><a href="/">Languages</a></li>
+            <li><a href="/">Your Ad Choices</a></li>
+            <li><a href="/">Press</a></li>
+            <li><a href="/">©️ Quora, Inc. 2023</a></li>
+        </ul>
+        </div>
+      </div>
+      <div class="posts second_col">
+        <div class="input_post heading">
+          Posts
+        </div>
+
+        <ul class="postsFlex">
+          {{#if posts}}
+          {{!-- which posts to display? user's own or that of the other users on the site (follow feature not introduced yet) --}}
+          {{#each posts as |post|}}
+          <li class="post">
+           <div class="title"> {{post.post}} </div>
+           <div class="img_border"><img src="{{post.image}}" alt="image" class="p_img"/></div>
+           <div class="date"> {{post.date}} </div>
+            {{!-- two buttons for requests --}}
+            <div class="forms">
+            <form action="/upvote" method="post" class="upvote">
+            <input type="hidden" name="postid" value="{{post._id}}">
+            <button type="submit">⬆️</button>
+            <div>{{post.upvoteCount}}</div>           
+             </form>
+            <form action="/downvote" method="post" class="downvote">
+            <input type="hidden" name="postid" value="{{post._id}}">
+            <button type="submit">⬇️ </button>
+            <div>{{post.downvoteCount}}</div>
+            </form>
+            </div>
+            <form action="/"  class="post_comment">
+            <input type="hidden" name="postid" value="{{post._id}}">
+            <input type="text" name="comment" class="comment" placeholder="Post comment...">
+            <button type="submit">POST</button>
+            </form>
+            <div class="comments">
+              
+            </div>
+            
+            <div class="dynamicComments" class="hide_dynamic">
+              {{#each post.comments as |comment|}}
+              <div>{{comment.comment}}</div>
+                {{/each}}
+            </div>
+            
+          </li>
+          {{/each}}
+          {{else}}
+          <div class="noleft">No posts!</div>
+          {{/if}}
+        </ul>
+      </div>
+      <div class="ads third_col"></div>
+      <div class="addq_modal">
+      <div class="cross">
+        <img
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios/50/multiply.png"
+          alt="multiply"
+        />
+      </div>
+      <div class="parts">
+        <div class="addqbtn">Add Question</div>
+        <div class="createpostbtn">Create Post</div>
+      </div>
+      <div class="addquestion">
+        <div class="tips">
+          <div>Tips on getting good answers quickly</div>
+          <ul>
+            <li>Make sure your question has not been asked already
+            </li>
+            <li>Keep your question short and to the point
+            </li>
+            <li>Double-check grammar and spelling
+            </li>
+          </ul>
+        </div>
+        <form action="/postquestion" method="post" class="postform">
+          <input
+            type="text"
+            id="question"
+            name="question"
+            placeholder="Start your question with 'What','How','Why',etc."
+          />
+          <div class="wrapperPostq">
+            <button type="button" class="cancel">Cancel</button>
+            <button type="submit" class="add_qbtn">Add question</button>
+          </div>
+        </form>
+      </div>
+      <div class="addpost">
+        <form action="/addPost" method="post" class="addpostform">
+          <textarea
+            name="post"
+            class="post_content"
+            placeholder="Say something..."
+            cols="30"
+            rows="10"
+          ></textarea>
+          <div class="upload_image">
+            <div>Add Image Url: </div>
+          <input type="text" name="image">
+          </div>
+          <button type="submit" class="addpost_btn">Post</button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay">
+
+    </div>
+    </div>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../script-navbar.js"></script>
+    <script src="../search-nav.js"></script>
+    <script src="../script-dashboard.js"></script>
+  </body>
+</html>

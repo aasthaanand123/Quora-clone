@@ -1,0 +1,109 @@
+.questions {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  align-items: center;
+}
+.qcontent span a {
+  color: black;
+}
+.heading {
+  margin-top: 5%;
+  font-size: 30px;
+  font-weight: 600;
+  color: brown;
+  text-align: center;
+}
+.question {
+  width: 60%;
+  margin-top: 2%;
+  background-color: rgba(128, 128, 128, 0.173);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2%;
+}
+.answer {
+  width: 30%;
+  height: 20%;
+}
+.qcontent,
+.answer {
+  margin-top: 1.5%;
+}
+.noleft {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 5%;
+  height: 8%;
+}
+.q {
+  font-size: 20px;
+  font-weight: 600;
+}
+/* answer modal styling */
+.answer_modal {
+  width: 35%;
+  height: 53%;
+  position: absolute;
+  top: 13%;
+  left: 30%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: black;
+  padding: 3%;
+  padding-top: 2%;
+  z-index: 3;
+  visibility: hidden;
+}
+.answer_modal form {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.post_answer {
+  resize: none;
+  width: 100%;
+  height: 75%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+}
+.answer_modal form button {
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  width: 28%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+}
+.user_name {
+  font-size: 18px;
+  font-weight: 400;
+}
+.question_toanswer {
+  font-size: 20px;
+  font-weight: 600;
+}
+.crossAns {
+  width: 50px;
+  cursor: pointer;
+}
+.overlay-one {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+.hide {
+  display: none;
+}

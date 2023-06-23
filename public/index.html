@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quora</title>
+    <link rel="stylesheet" href="style-index.css" />
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h1>Quora</h1>
+        <h2>A place to share knowledge and better understand the world</h2>
+      </header>
+      <main>
+        <section class="signUp">
+          <div class="signupfirst">
+            By continuing you indicate that you agree to Quora’s
+            <a href="https://www.quora.com/about/tos">Terms of Service</a> and
+            <a href="https://www.quora.com/about/privacy">Privacy Policy.</a>
+          </div>
+          <div class="continueLinks">
+            <!-- add icons -->
+            <a href="/" class="continue"> Continue with Google</a>
+            <a href="/auth/facebook" class="continue">
+              Continue with Facebook</a
+            >
+            <a href="/" class="signupwithemail">Sign up with email</a>
+          </div>
+        </section>
+        <!-- login functionality -->
+        <section class="login">
+          <form action="/getUser" method="get">
+            <div class="title-login">Login</div>
+            <label for="email" class="email"><b>Email</b></label>
+            <input type="text" name="email" id="email" />
+            <label for="password"><b>Password</b></label>
+            <input type="password" name="password" id="password" />
+            <div class="buttons">
+              <a href="/">Forgot password?</a>
+              <button type="submit">Login</button>
+            </div>
+          </form>
+        </section>
+      </main>
+      <footer>
+        <a class="language" href="/">english &#8702;</a>
+        <div>
+          <ul>
+            <li><a href="https://www.quora.com/about">About</a></li>
+            <li><a href="https://www.careers.quora.com/">Careers</a></li>
+            <li><a href="https://www.quora.com/about/privacy">Privacy</a></li>
+            <li><a href="https://www.quora.com/about/tos">Terms</a></li>
+            <!-- make separate static pages for contact languages and your ad choices -->
+            <li><a href="/">Contact</a></li>
+            <li><a href="/">Languages</a></li>
+            <li><a href="/">Your Ad Choices</a></li>
+            <li><a href="https://www.quora.com/press">Press</a></li>
+            <li><a href="/">©️ Quora, Inc. 2023</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <div class="modal">
+      <div class="cross">
+        <img
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios/50/multiply.png"
+          alt="multiply"
+        />
+      </div>
+      <div class="titleSignUp">Sign Up</div>
+      <form action="/" method="post" class="signUpForm">
+        <input
+          type="email"
+          placeholder="enter email"
+          name="email"
+          id="email_signup"
+        />
+        <input
+          type="password"
+          placeholder="enter password"
+          name="password"
+          id="password_signup"
+        />
+        <button type="submit" class="signupbtn">Create Account</button>
+      </form>
+    </div>
+    <div class="modal-overlay"></div>
+    <div class="interests">
+      <!-- interests modal -->
+      <div class="title">One Last Step</div>
+      <!-- check box including images for interests -->
+      <div class="interest_flex">
+        <div>Technology</div>
+        <div>Movies</div>
+        <div>Health</div>
+        <div>Food</div>
+        <div>Science</div>
+        <div>Music</div>
+        <div>Books</div>
+        <div>Visiting and Travel</div>
+        <div>Business</div>
+        <div>Psychology</div>
+        <div>History</div>
+        <div>Cooking</div>
+        <div>Sports</div>
+        <div>Fashion and Style</div>
+        <div>Design</div>
+        <div>Writing</div>
+        <div>Mathematics</div>
+        <div>Economics</div>
+      </div>
+      <a href="/" class="submituser">Follow atleast 5 fields to continue</a>
+    </div>
+    <form action="/getLogin" method="post" class="finalsignup">
+      <input type="hidden" id="finalSignup" name="details" />
+      <button type="submit" class="submit_button">Create Account</button>
+    </form>
+  </body>
+</html>

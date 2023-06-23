@@ -1,0 +1,160 @@
+/* navbar styling */
+
+.main_dashboard {
+  display: flex;
+  width: 100%;
+  min-height: 90vh;
+}
+.first_col,
+.third_col {
+  width: 25%;
+  background-color: #7f808126;
+}
+.first_col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.second_col {
+  background-color: white;
+  width: 50%;
+}
+.content_firstcol {
+  position: sticky;
+  top: 14vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 50%;
+  margin-top: 8%;
+}
+.footer {
+  width: 80%;
+  border-top: 1px solid #7f80813c;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer li {
+  margin-right: 4%;
+  line-height: 35px;
+}
+.footer li a {
+  color: #7f808193;
+  padding: 8%;
+}
+.interests li {
+  margin-top: 10%;
+}
+.interests li a {
+  padding: 3%;
+  color: #7f8081;
+}
+.interests {
+  width: 80%;
+  margin-bottom: 20%;
+}
+.createspace {
+  color: #7f8081;
+}
+.interests li a:hover,
+.footer li a:hover {
+  background-color: #7f808111;
+}
+/* posts styling */
+.postsFlex {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  align-items: center;
+  margin-bottom: 4%;
+}
+.heading {
+  margin-top: 5%;
+  font-size: 30px;
+  font-weight: 600;
+  color: brown;
+  text-align: center;
+}
+.postsFlex li {
+  width: 60%;
+  margin-top: 2%;
+  background-color: rgba(128, 128, 128, 0.173);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2%;
+}
+.noleft {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 5%;
+  height: 8%;
+}
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2%;
+}
+.hide-dynamic {
+  display: block;
+}
+.date {
+  font-size: 16px;
+  color: gray;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.forms {
+  display: flex;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.forms form {
+  margin-right: 3%;
+}
+.upvote button,
+.downvote button {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  margin-right: 1%;
+  cursor: pointer;
+}
+.post_comment button {
+  color: black;
+  border: 1px solid gray;
+  outline: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.post_comment button:hover {
+  background-color: rgba(128, 128, 128, 0.493);
+}
+.upvote,
+.downvote {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  font-weight: 600;
+}
+.comments,
+.dynamicComments {
+  margin-top: 1%;
+}
+.head_comm {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+  /* margin-bottom: 1%; */
+  margin-top: 2%;
+}
+.comments div,
+.dynamicComments div {
+  color: gray;
+  padding: 4px;
+  background-color: rgba(128, 128, 128, 0.056);
+}

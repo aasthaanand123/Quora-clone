@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style-nav.css">
+    <link rel="stylesheet" href="../style-modaladdq.css">
+    <link rel="stylesheet" href="../style-profile.css">
+  </head>
+  <body>
+        {{> navigation}}
+        <div class="flex_cols">
+          <div class="first_col"></div>
+        <main>
+            <div class="main_content">
+                <div class="mainProfile">
+                    <div class="details">
+                      <div class="pic_n_info">
+                        
+                        <div class="image"><img src="https://img.freepik.com/premium-vector/avatar-profile-icon_188544-4755.jpg"></div>
+                        <div class="wrapperinfo_main">
+                          
+                            <div class="name">{{user.email}}</div>
+                            <div class="profile_cred">Add profile credential</div>
+                            <div class="follow">
+                                <span class="followers">0 followers</span>
+                                <span class="following">2 following</span>
+                            </div>
+                            </div>
+                         
+                        </div>
+                        <div class="i">
+                            <div class="icon">⏩</div>
+                        </div>
+                    </div>
+                    <div class="description"></div>
+                    <div class="stats">
+                        <a href="/">Profile</a>
+                        <a href="/" class="myA">Answers</a>
+                        <a href="/" class="myQ">Questions</a>
+                        <a href="/" class="myP">Posts</a>
+                        <a href="/">Followers</a>
+                        <a href="/">Following</a>
+                        <a href="/">Edits</a>
+                        <a href="/">Activity</a>
+                    </div>
+                    <div class="mypostsquestions">
+                      {{#each answers as |answer|}}
+                      <form action="/deleteAnswer" method="post">
+                      <div>{{answer.answer}}</div>
+                      <input type="hidden" name="answerId" value="{{answer._id}}">
+                      <button type="submit">Delete Answer</button>
+                      <button type="submit" formaction="/updateAnswer">Update Answer</button>
+                      </form>    
+                      {{/each}}
+                    </div>
+                </div>
+                <div class="credentials">
+                    <div>
+                        <div>
+                        <div  class="headingCredentials">Credentials and Highlights</div>
+                        <div>📝</div>
+                        </div>
+                        <div>Add credentials</div>
+                        <div>Joined date: </div>
+                        <div>{{user.date}}</div>
+                    </div>
+
+                    <div>
+                        <div>Knows about</div>
+                        <div>📝</div>
+                    </div>
+                    <div class="btns-logouts">
+                    <form action="/logout"><button type="submit">Logout</button></form>
+                    <form action="/signout"><button type="submit">Signout</button></form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="third_col"></div>
+        </div>
+        <div class="addq_modal">
+      <div class="cross">
+        <img
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios/50/multiply.png"
+          alt="multiply"
+        />
+      </div>
+      <div class="parts">
+        <div class="addqbtn">Add Question</div>
+        <div class="createpostbtn">Create Post</div>
+      </div>
+      <div class="addquestion">
+        <div class="tips">
+          <div>Tips on getting good answers quickly</div>
+          <ul>
+            <li>Make sure your question has not been asked already
+            </li>
+            <li>Keep your question short and to the point
+            </li>
+            <li>Double-check grammar and spelling
+            </li>
+          </ul>
+        </div>
+        <form action="/postquestion" method="post" class="postform">
+          <input
+            type="text"
+            name="question"
+            id="question"
+            placeholder="Start your question with 'What','How','Why',etc."
+          />
+          <div class="wrapperPostq">
+            <button type="button" class="cancel">Cancel</button>
+            <button type="submit" class="add_qbtn">Add question</button>
+          </div>
+        </form>
+      </div>
+      <div class="addpost">
+        <form action="/addPost" method="post" class="addpostform">
+          <textarea
+            name="post"
+            class="post_content"
+            placeholder="Say something..."
+            cols="30"
+            rows="10"
+          ></textarea>
+
+          <button type="submit" class="addpost_btn">Post</button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay">
+
+    </div>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+        <script src="../script-navbar.js"></script>
+        <script src="../search-nav.js"></script>
+        <script src="../script-profilepage.js"></script>
+  </body>
+</html>

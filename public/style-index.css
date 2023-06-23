@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+body {
+  background-image: url("//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png");
+}
+.main {
+  background-image: none;
+  font-family: sans-serif;
+  background-color: white;
+  /* padding: 4%; */
+  width: 49%;
+  margin-top: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 1px solid black; */
+  padding-top: 0.5%;
+  /* padding-bottom: 0.5%; */
+  font-size: 18px;
+}
+.main a:hover {
+  text-decoration: underline;
+}
+/* header */
+header {
+  margin-top: 5%;
+  text-align: center;
+}
+h1 {
+  color: brown;
+  font-size: 3em;
+}
+h2 {
+  font-size: 1em;
+  color: rgb(113, 113, 113);
+}
+/* main*/
+main {
+  padding: 4%;
+  display: flex;
+  margin-top: 4%;
+  padding-right: 0%;
+  padding-bottom: 3%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.321);
+}
+.signUp {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.signUp .signupfirst {
+  width: 85%;
+  font-size: 0.9em;
+}
+.signUp div {
+  color: rgba(128, 128, 128, 0.727);
+  font-size: 0.95em;
+  width: 75%;
+}
+
+.signUp .continue {
+  border: 1px solid rgba(128, 128, 128, 0.248);
+  margin-top: 3%;
+  width: 90%;
+  color: black;
+  padding: 3%;
+}
+.continueLinks {
+  display: flex;
+  flex-direction: column;
+}
+.signUp .continue:hover {
+  text-decoration: none;
+  background-color: rgba(128, 128, 128, 0.122);
+}
+.login {
+  width: 50%;
+}
+.login .title-login {
+  font-size: 1.1em;
+  padding-bottom: 5%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.329);
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.95em;
+  width: 75%;
+}
+.login form label {
+  margin-bottom: 4%;
+}
+.login form input {
+  margin-bottom: 3%;
+  border: 1px solid rgba(128, 128, 128, 0.36);
+  padding: 2%;
+}
+.login form input:focus {
+  outline: none;
+  border: 1px solid lightblue;
+}
+.email {
+  display: block;
+  margin-top: 5%;
+}
+.buttons {
+  display: flex;
+  margin-top: 4%;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttons a {
+  color: gray;
+}
+.buttons button {
+  background-color: rgba(0, 0, 255, 0.595);
+  padding: 3% 7%;
+  border-radius: 16px;
+  border-color: rgba(255, 255, 255, 0.112);
+  color: white;
+  cursor: pointer;
+}
+/* footer */
+footer .language {
+  display: block;
+  font-size: 0.8em;
+  /* color: blue; */
+  width: 20%;
+  margin: 2% auto;
+}
+footer div {
+  background-color: rgba(128, 128, 128, 0.17);
+}
+footer div ul {
+  margin-top: 2%;
+  padding: 3% 2%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.7em;
+  /* width: 90%; */
+}
+footer ul li {
+  color: gray;
+}
+footer ul li a {
+  color: gray;
+}
+.continueLinks .signupwithemail {
+  border: none;
+  color: gray;
+  margin-top: 3%;
+  margin-left: 17%;
+}
+.signUp .signupfirst {
+  margin-bottom: 2%;
+}
+.continueLinks .continue {
+  padding: 2%;
+}
+/* modal styling */
+/* add a black background when modal pops up */
+.modal {
+  visibility: hidden;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 13%;
+  left: 30%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: black;
+  padding: 3%;
+  padding-top: 2%;
+  z-index: 3;
+}
+.titleSignUp {
+  font-size: 40px;
+  margin: 2% 0;
+
+  font-weight: 400;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+.signUpForm input,
+.signUpForm button {
+  margin-bottom: 5%;
+  outline: rgba(0, 0, 0, 0.368);
+  border: 1px solid rgba(128, 128, 128, 0.849);
+  padding: 2%;
+  cursor: pointer;
+}
+.cross {
+  cursor: pointer;
+}
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+/* interests modal */
+.interests {
+  font-family: sans-serif;
+  width: 37%;
+  /* height: 50%; */
+  background-color: rgb(255, 255, 255);
+  padding: 3%;
+  position: absolute;
+  top: 13%;
+  left: 27%;
+  visibility: hidden;
+  z-index: 10;
+  padding: 3%;
+  padding-top: 2%;
+}
+.interest_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 12px 0px;
+}
+.interest_flex div {
+  font-size: 13px;
+  margin: 3px;
+  height: 80px;
+  width: 13%;
+  padding: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.808);
+  cursor: pointer;
+}
+.interests .title {
+  font-size: 22px;
+  font-weight: 600;
+}
+.interests a {
+  display: block;
+  margin-top: 10px;
+  margin-left: 50%;
+  padding: 10px 15px;
+  background-color: #0000ff98;
+  color: white;
+  border-radius: 20px;
+  width: 44%;
+}
+/* add background images of each interest */
+/* final sign up button display */
+.finalsignup {
+  visibility: hidden;
+  position: absolute;
+  width: 30%;
+  height: 20%;
+  color: white;
+  z-index: 20;
+  padding: 3%;
+  top: 13%;
+  left: 27%;
+}
+/*  button color blue */
+.submit_button {
+  margin: 20% 40%;
+  background-color: #0000ff9e;
+  color: rgba(255, 255, 255, 0.601);
+  padding: 3%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.564);
+  width: 40%;
+  cursor: pointer;
+}
